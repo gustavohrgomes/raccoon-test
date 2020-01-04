@@ -1,0 +1,150 @@
+/* Base CSS */
+html, body, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+footer {
+    background-color: red;
+    grid-area: footer;
+}
+ul {
+    list-style-type: none;
+}
+a{
+    text-decoration: none
+}
+
+/* General CSS */
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e7e7e7;
+}
+.btn:hover {
+    background-color: #ddd;
+}
+
+.main-section {
+    background-color: tomato;
+    height: 100px;
+}
+
+/* Header Section */
+.navbar {
+    background-color: #2571B7;
+    grid-area: header;
+    padding: 5px 5%;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+}
+
+.navbar .nav-link {
+    display: block;
+}
+
+.navbar-toggle {
+    color: white;
+}
+
+.line1,
+.line2,
+.line3 {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: .2s;
+}
+
+.active-toggle .line1 {
+    transform: rotate(-45deg) translate(-6px, 5px);
+}
+
+.active-toggle .line2 {
+    opacity: 0;
+}
+
+.active-toggle .line3 {
+    transform: rotate(45deg) translate(-6px, -5px);
+}
+
+.btn-navbar {
+    border: none;
+    padding: 6px 20px;
+    background: #002050;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.btn-navbar:hover {
+    background-color: #002d5f;
+}
+
+/* Mobile Menu */
+.navbar .nav-item, .navbar-toggle {
+    padding: 10px 5px;
+}
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-toggle {
+    order: 1;
+    cursor: pointer;
+}
+.btn {
+    order: 2;
+}
+.nav-menu {
+    order: 3;
+    width: 100vw;
+    flex-direction: column;
+    display: none;
+}
+.nav-item {
+    width: 100%;
+    text-align: center;
+}
+.active {
+    display: block;
+}
+
+/* Desktop Menu */
+@media all and (min-width: 769px){
+    .navbar-toggle {
+        display: none;
+    }
+    .logo {
+        display: block;
+        flex: 1;
+    }
+    .navbar {
+        justify-content: flex-end;
+    }
+    .nav-menu{
+        display: flex;
+        flex-direction: row;
+        width: 35%;
+        order: 2;
+        margin-right: 3rem;
+    }
+}
