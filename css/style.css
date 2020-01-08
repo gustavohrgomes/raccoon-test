@@ -307,7 +307,7 @@ a{
     align-items: center;
 
     background-color: #2571B7;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.2rem;
     margin-bottom: 1.5rem;
 }
 
@@ -358,6 +358,31 @@ h5.heading {
 }
 .box:nth-of-type(10){
     background-color: #5558AF;
+}
+
+@media all and (min-width: 769px){
+    .box:nth-child(n+7) {
+        display: flex;
+    }
+
+    .card-flex {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .box {
+        max-width: 40%;
+    }
+
+    .box:nth-child(odd) {
+        margin-left: auto;
+        margin-right: .75rem;
+    }
+    .box:nth-child(even) {
+        margin-left: .75rem;
+        margin-right: auto;
+    }
 }
 
 /* Section 3 */
