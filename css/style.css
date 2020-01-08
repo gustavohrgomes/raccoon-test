@@ -20,6 +20,19 @@ a{
     background-color: #ddd;
 }
 
+.btn-md {
+    padding: 10px 22px
+}
+
+.btn-outline {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #e7e7e7;
+    
+    border: solid 3px #e7e7e7;
+    background-color: transparent;
+}
+
 .text {
     color: #797979;
     font-weight: 500;
@@ -52,7 +65,7 @@ a{
 
 .page-section{
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
 /* Header Section */
@@ -210,7 +223,6 @@ a{
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-    z-index: -1;
 }
 
 .caption h1 {
@@ -348,3 +360,106 @@ h5.heading {
     background-color: #5558AF;
 }
 
+/* Section 3 */
+
+.item {
+    /*display: flex;
+    flex-wrap: wrap;
+    align-items: center;*/
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header header"
+                         "txt img"
+                         "btn btn";
+
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.item h5.heading {
+    font-weight: 500;
+    color: #7FBA00;
+    grid-area: header;
+}
+.item:nth-of-type(2) h5.heading {
+    color: #00A4EF;
+}
+.item:nth-of-type(3) h5.heading {
+    color: #FFB900;
+}
+
+.item-img {
+    width: 45px;
+    height: 45px;
+    margin: 0 0 20px 20px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #7FBA00;
+    grid-area: img;
+}
+.item:nth-of-type(2) .item-img {
+    background-color: #00A4EF;
+}
+.item:nth-of-type(3) .item-img {
+    background-color: #FFB900;
+}
+
+.item-img img {
+    width: 45px;
+    height: 45px;
+}
+
+.item .text {
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    grid-area: txt;
+    align-self: center;
+}
+
+.item:nth-child(-n+2)::after {
+    display: block;
+    content: "";
+
+    width: 100%;
+    height: 3px;
+
+    position: absolute;
+    bottom: -1.5rem;
+    background-color: lightgray;
+    /*border-bottom: solid 2px gray;*/
+}
+
+.item .btn {
+    margin-right: auto;
+}
+
+.success {
+    border-color: #7FBA00;
+    color: #7FBA00;
+    grid-area: btn;
+}
+.success:hover {
+    background-color: #7FBA00;
+    color: white;
+}
+
+.info {
+    border-color: #00A4EF;
+    color: #00A4EF;
+}
+.info:hover {
+    background-color: #00A4EF;
+    color: white;
+}
+
+.warning {
+    border-color: #FFB900;
+    color: #FFB900;
+}
+.warning:hover {
+    background-color: #FFB900;
+    color: white;
+}
